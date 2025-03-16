@@ -3,18 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon Sprites</title>
+    <title>Pokémon Finder</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Welcome to the amazing world of Pokémon</h1>
+      <h1>Pokémon Finder</h1>
     </header>
 
-    <main>
-      <input type="text" placeholder="Enter a Pokémon name" id="pokemonInput" />
-      <button onclick="fetchData()">Press Me</button>
-      <img id="pokemonImage" style="display: none" alt="Sprite" />
-    </main>
+    <section class="search-box">
+      <label for="pokemonInput">Enter Pokémon Name or ID:</label>
+      <input id="pokemonInput" type="text" placeholder="e.g., Pikachu or 25" />
+      <button onclick="fetchData()">Search</button>
+    </section>
+
+    <section id="pokemonSection" class="hidden">
+      <article class="pokemon-info">
+        <h2 id="pokemonName"></h2>
+        <figure>
+          <img id="pokemonImage" alt="Pokémon Sprite" />
+          <figcaption id="pokemonTypes"></figcaption>
+        </figure>
+      </article>
+
+      <article class="pokemon-stats">
+        <p><strong>Height:</strong> <span id="pokemonHeight"></span> m</p>
+        <p><strong>Weight:</strong> <span id="pokemonWeight"></span> kg</p>
+        <p><strong>Abilities:</strong> <span id="pokemonAbilities"></span></p>
+      </article>
+
+      <section class="pokemon-cry">
+        <audio id="pokemonCry" controls class="hidden"></audio>
+      </section>
+
+      <aside class="pokemon-stat-list">
+        <h3>Base Stats</h3>
+        <ul id="pokemonStats"></ul>
+      </aside>
+    </section>
+
+    <p id="message">Enter a Pokémon name or ID to begin...</p>
 
     <script src="script.js"></script>
   </body>
